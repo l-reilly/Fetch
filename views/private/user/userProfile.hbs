@@ -1,0 +1,23 @@
+<h1>My Profile</h1>
+
+<p> Email:  {{user.email}}</p>
+<p>Name: {{user.name}}</p>
+<p>City: {{user.city}}</p>
+
+<a href='/profle/pets/:id/add'>
+    <button>Add your pet!</button>
+</a>
+
+<a href='/pets'>
+    <button>Find Friends</button>
+</a>
+
+<h1>My Pets</h1>
+
+{{#each pets}}
+    <img src={{photo}}> 
+    <p>{{name}}</p>
+
+{{/each}}
+
+<h1>My Pets</h1>

@@ -1,0 +1,29 @@
+<div id="form">
+  <h2>Signup</h2>
+  <form action="/signup" method="POST">
+ 
+    <label> Email
+      <input type="text" name="email" placeholder="@email.com" required/>
+    </label>
+ 
+    <label> Password
+      <input type="password" name="password" placeholder="********" required/>
+    </label>
+
+       <label> Name
+      <input type="text" name="name" placeholder="name" required/>
+    </label>
+
+      <label> City
+      <input type="text" name="city" placeholder="Jakarta" required/>
+    </label>
+ 
+ 
+    <button type="submit">Create account</button>
+ 
+    {{#if err}}
+      <p>{{err}}</p>
+    {{/if}}
+    
+  </form>
+</div>

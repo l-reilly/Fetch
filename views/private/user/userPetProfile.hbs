@@ -1,0 +1,18 @@
+<h2>{{user.pet.name}}</h2>
+<img src={{user.pet.photo}}> 
+<p>{{user.pet.age}}</p>
+<p>{{user.pet.description}}</p>
+<p>{{user.pet.breed}}</p>
+<p>{{user.pet.city}}</p>
+<p>{{user.pet.playDay}}</p>
+<p>{{user.pet.playTime}}</p>
+<p>{{user.pet.address}}</p>
+<p>{{user.pet.adoption}}</p>
+
+<a href='/profile/pets/{{_id}}/edit'>
+    <button>Edit profile</button>
+</a>
+
+<form action=“/profile/pets/{{_id}}/delete” method=“POST”>
+<button type=“submit”>Delete Pet</button>
+</form>
