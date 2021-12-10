@@ -6,3 +6,22 @@ router.get("/", (req, res, next) => {
 });
 
 module.exports = router;
+
+/*router.get("/pets", isLoggedIn ,async (req ,res, next) => {
+  try {
+    Pet.find().then((pets)=>{
+      res.render('/private/feed',{pets})
+  }) catch (err) {
+      console.log(`ERROR: ${error.message}`);
+      next(error);
+    }
+  } */
+
+  router.get("/pets", isLoggedIn, async (req, res, next) => {
+    try {
+      Pet.find().then((pets) => {
+        res.render('/private/feed', {pets})
+      })
+      
+    }
+  })
