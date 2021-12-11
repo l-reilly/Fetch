@@ -9,8 +9,6 @@ router.get("/", (req, res, next) => {
   res.render("public/index");
 });
 
-<<<<<<< HEAD
-=======
 /*GET feed*/
 
 
@@ -56,11 +54,30 @@ router.get("profile/pets/:id", async (req, res, next) => {
   }
 
 });
->>>>>>> 3f9f6cc660ecc07439ace5f5e4cdcc7ca3d17c61
 
+router.get("/signup", isLoggedOut, (req, res, next) => {
+  res.render("public/signup");
+});
 
-module.exports = router;
+router.get("/login", isLoggedOut, (req, res, next) => {
+  res.render("public/login");
+});
 
+router.get("/petProfile", isLoggedIn, (req, res, next) => {
+  res.render("/private/pets/petProfile")
+})
+router.get("/addPetProfile", isLoggedIn, (req, res, next) => {
+  res.render("/private/user/addPetProfile")
+})
+router.get("/editPetProfile", isLoggedIn, (req, res, next) => {
+  res.render("/private/user/editPetProfile")
+})
+router.get("/userPetProfile", isLoggedIn, (req, res, next) => {
+  res.render("/private/user/userPetProfile")
+})
+router.get("/userProfile", isLoggedIn, (req, res, next) => {
+  res.render("/private/user/userProfile")
+})
 /*router.get("/pets", isLoggedIn ,async (req ,res, next) => {
   try {
     Pet.find().then((pets)=>{
@@ -71,3 +88,4 @@ module.exports = router;
     }
   } */
 
+  module.exports = router;
