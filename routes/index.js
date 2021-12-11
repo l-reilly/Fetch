@@ -11,8 +11,6 @@ router.get("/", (req, res, next) => {
 
 /*GET feed*/
 
-
-
 router.get("/pets", isLoggedIn ,async (req ,res, nxt) => {
   try {
     Pet.find().then((pets=>{
@@ -24,9 +22,6 @@ router.get("/pets", isLoggedIn ,async (req ,res, nxt) => {
 
   });
   
-
-
-
 /*GET petProfile*/
 
 router.get("pets/:id", isLoggedIn, async (req, res, next) => {
