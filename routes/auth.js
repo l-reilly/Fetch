@@ -50,7 +50,7 @@ router.post("/signup",isLoggedOut, (req, res) => {
     if (found) {
       return res
         .status(400)
-        .render("public.signup", { errorMessage: "Email already taken." });
+        .render("public/signup", { errorMessage: "Email already taken." });
     }
 
     // if user is not found, create a new user - start with hashing the password
@@ -62,6 +62,8 @@ router.post("/signup",isLoggedOut, (req, res) => {
         return User.create({
           email,
           password: hashedPassword,
+          city,
+          name
         });
       })
       .then((user) => {
